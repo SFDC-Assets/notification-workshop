@@ -1,6 +1,6 @@
-sfdx shane:org:create -f config/project-scratch-def.json -d 1 -s --userprefix notify -o work.shop
-sfdx force:source:push
-sfdx force:user:permset:assign -n Notifications
-sfdx shane:user:password:set -p sfdx1234 -g User -l User
-sfdx force:org:open
-sfdx automig:load -d data --deletebeforeload --concise
+sf demoutil org create scratch -f config/project-scratch-def.json -d 2 -s -p notification -e build.workshop
+sf project deploy start
+sf org assign permset -n Notifications
+sf demoutil user password set -p salesforce1 -g User -l User
+sf automig load -d data --deletebeforeload --concise
+sf org open
